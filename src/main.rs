@@ -1,16 +1,18 @@
+use std::time::{Instant};
 
 fn main() {
-    
-    for i in 0..100 {
+    let start = Instant::now();
+    for _i in 0..100 {
         let nums = gen_nums();
-        let sorted_nums = quick_sort(nums);
-        print!("{}\n",i);
+        let _sorted_nums = quick_sort(nums);
     }
+    let duration = start.elapsed();
+    print!("{:?}", duration);
 }
 
 fn gen_nums() -> Vec<i32> {
     let mut nums :Vec<i32> = Vec::new();
-    for i in 0..100000 {
+    for _i in 0..100000 {
         nums.push(rand::random::<i32>());
     }
     nums
